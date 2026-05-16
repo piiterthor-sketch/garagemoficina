@@ -77,7 +77,7 @@
         /* Header */
         header {
             backdrop-filter: blur(16px);
-            background: rgba(23, 23, 23, 0.75);
+            background: rgba(23, 23, 23, 0.85);
             border-bottom: 1px solid rgba(31, 30, 30, 0.08);
         }
 
@@ -102,27 +102,45 @@
         .hero::before {
             content: "";
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 300px;
+            height: 300px;
             background: radial-gradient(circle,
-                    rgba(200, 169, 107, 0.25),
+                    rgba(200, 169, 107, 0.15),
                     transparent 70%);
-            top: -200px;
-            right: -150px;
+            top: -100px;
+            right: -50px;
             border-radius: 50%;
+        }
+
+        @media(min-width: 768px) {
+            .hero::before {
+                width: 600px;
+                height: 600px;
+                top: -200px;
+                right: -150px;
+            }
         }
 
         .hero::after {
             content: "";
             position: absolute;
-            width: 500px;
-            height: 500px;
+            width: 300px;
+            height: 300px;
             background: radial-gradient(circle,
-                    rgba(15, 76, 92, 0.35),
+                    rgba(15, 76, 92, 0.25),
                     transparent 70%);
-            bottom: -180px;
-            left: -150px;
+            bottom: -100px;
+            left: -50px;
             border-radius: 50%;
+        }
+
+        @media(min-width: 768px) {
+            .hero::after {
+                width: 500px;
+                height: 500px;
+                bottom: -180px;
+                left: -150px;
+            }
         }
 
         .gold-text {
@@ -137,7 +155,7 @@
             background: linear-gradient(135deg,
                     var(--gold),
                     var(--gold-light));
-            color: #111;
+            color: #fff;
             font-weight: 700;
             transition: .4s ease;
             position: relative;
@@ -146,7 +164,7 @@
 
         .premium-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(200, 169, 107, .4);
+            box-shadow: 0 10px 30px rgba(6, 105, 203, .4);
         }
 
         .premium-btn::before {
@@ -166,9 +184,15 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--teal-dark);
+        }
+
+        @media(min-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
         }
 
         .card-premium {
@@ -185,9 +209,15 @@
         }
 
         .service-img {
-            height: 260px;
+            height: 220px;
             object-fit: cover;
             transition: .5s;
+        }
+
+        @media(min-width: 768px) {
+            .service-img {
+                height: 260px;
+            }
         }
 
         .gallery-item {
@@ -230,12 +260,8 @@
         }
 
         @media(max-width:768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-
             .hero h1 {
-                font-size: 3rem !important;
+                font-size: 2.25rem !important;
             }
         }
     </style>
@@ -245,695 +271,399 @@
 
     <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 sm:gap-4">
                 <img src="images/garagemlogo.jpg"
                      alt="Logo"
-                     class="w-20 floating">
+                     class="w-12 sm:w-16 floating rounded-full">
 
                 <div>
-                    <h2 class="text-white font-extrabold text-xl">
+                    <h2 class="text-white font-extrabold text-lg sm:text-xl tracking-tight">
                         GARAGEM
                     </h2>
-                    <p class="text-gray-300 text-sm">
+                    <p class="text-gray-300 text-xs sm:text-sm">
                         DO AUTOMÓVEL
                     </p>
                 </div>
             </div>
 
+            <!-- Menu Desktop -->
             <nav class="hidden lg:flex items-center gap-8 text-white font-medium">
-                <a href="#home"
-                   class="hover:text-yellow-400 transition">
-                    Início
-                </a>
-
-                <a href="#sobre"
-                   class="hover:text-yellow-400 transition">
-                    Sobre
-                </a>
-
-                <a href="#servicos"
-                   class="hover:text-yellow-400 transition">
-                    Serviços
-                </a>
-
-                <a href="#galeria"
-                   class="hover:text-yellow-400 transition">
-                    Galeria
-                </a>
-
-                <a href="#contato"
-                   class="hover:text-yellow-400 transition">
-                    Contato
-                </a>
+                <a href="#home" class="hover:text-blue-400 transition">Início</a>
+                <a href="#sobre" class="hover:text-blue-400 transition">Sobre</a>
+                <a href="#servicos" class="hover:text-blue-400 transition">Serviços</a>
+                <a href="#galeria" class="hover:text-blue-400 transition">Galeria</a>
+                <a href="#contato" class="hover:text-blue-400 transition">Contato</a>
             </nav>
 
-<a href="https://wa.me/553191463811"
-   class="bg-[#1591EA] text-white px-6 py-3 rounded-full inline-flex items-center gap-3">
+            <!-- Botão WhatsApp Desktop -->
+            <div class="hidden lg:block">
+                <a href="https://wa.me/553191463811" target="_blank"
+                   class="bg-[#1591EA] hover:bg-blue-600 transition text-white px-6 py-3 rounded-full inline-flex items-center gap-3">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    <span class="uppercase tracking-[2px] font-semibold text-sm">
+                        WhatsApp
+                    </span>
+                </a>
+            </div>
 
-    <i class="fab fa-whatsapp text-xl"></i>
+            <!-- Botão Menu Mobile -->
+            <button id="menu-btn" class="block lg:hidden text-white focus:outline-none z-50">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
 
-    <span class="uppercase tracking-[5px] font-semibold">
-        WhatsApp
-    </span>
+        </div>
 
-</a>
-
+        <!-- Menu Lateral Mobile -->
+        <div id="mobile-menu" class="fixed top-0 right-0 w-full h-screen bg-[#0b1114]/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col justify-center items-center gap-8 z-40">
+            <a href="#home" class="mobile-link text-white text-2xl font-semibold hover:text-blue-400 transition">Início</a>
+            <a href="#sobre" class="mobile-link text-white text-2xl font-semibold hover:text-blue-400 transition">Sobre</a>
+            <a href="#servicos" class="mobile-link text-white text-2xl font-semibold hover:text-blue-400 transition">Serviços</a>
+            <a href="#galeria" class="mobile-link text-white text-2xl font-semibold hover:text-blue-400 transition">Galeria</a>
+            <a href="#contato" class="mobile-link text-white text-2xl font-semibold hover:text-blue-400 transition">Contato</a>
+            
+            <a href="https://wa.me/553191463811" target="_blank"
+               class="bg-[#1591EA] text-white px-8 py-4 rounded-full inline-flex items-center gap-3 mt-4">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span class="uppercase tracking-[2px] font-semibold">WhatsApp</span>
+            </a>
         </div>
     </header>
 
     <!-- HERO -->
-    <section id="home"
-             class="hero flex items-center">
+    <section id="home" class="hero flex items-center pt-32 pb-12 lg:py-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
-
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-                <div data-aos="fade-right">
-
-                    <span class="text-blue-600 uppercase tracking-[5px] font-semibold">
+                <div data-aos="fade-right" class="text-center lg:text-left">
+                    <span class="text-blue-400 uppercase tracking-[3px] sm:tracking-[5px] font-semibold text-sm sm:text-base">
                         Oficina Mecânica Premium
                     </span>
 
-                    <h1 class="text-white text-6xl font-extrabold leading-tight mt-5">
-                        Tecnologia,
-                        confiança e
-                        excelência automotiva.
+                    <h1 class="text-white text-4xl sm:text-6xl font-extrabold leading-tight mt-4 sm:mt-5">
+                        Tecnologia, confiança e excelência automotiva.
                     </h1>
 
-                    <p class="text-gray-300 mt-8 text-lg leading-relaxed">
-                        A GARAGEM DO AUTOMÓVEL oferece soluções automotivas
-                        completas com padrão premium, atendimento especializado
-                        e alto desempenho em cada detalhe.
+                    <p class="text-gray-300 mt-6 sm:mt-8 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        A GARAGEM DO AUTOMÓVEL oferece soluções automotivas completas com padrão premium, atendimento especializado e alto desempenho em cada detalhe.
                     </p>
 
-                    <div class="flex flex-wrap gap-5 mt-10">
-
-                        <a href="https://wa.me/553191463811"
-                           target="_blank"
-                           class="premium-btn px-8 py-4 rounded-full">
+                    <div class="flex justify-center lg:justify-start gap-5 mt-8 sm:mt-10">
+                        <a href="https://wa.me/553191463811" target="_blank"
+                           class="premium-btn px-8 py-4 rounded-full w-full sm:w-auto text-center">
                             Solicitar Orçamento
                         </a>
-
-                    
                     </div>
-
                 </div>
 
-                <div data-aos="fade-left"
-                     class="relative">
-
-                    <div class="glass p-5 rounded-[35px]">
-
-                        <img src="images/oficina.jpg"
-                             alt="Logo"
-                             class="rounded-[30px] w-full">
-
+                <div data-aos="fade-left" class="relative w-full max-w-md mx-auto lg:max-w-none">
+                    <div class="glass p-3 sm:p-5 rounded-[25px] sm:rounded-[35px]">
+                        <img src="images/oficina.jpg" alt="Oficina" class="rounded-[20px] sm:rounded-[30px] w-full object-cover">
                     </div>
-
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
     <!-- SOBRE -->
-    <section id="sobre"
-             class="py-24">
+    <section id="sobre" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center mb-16"
-                 data-aos="fade-up">
-
-                <h2 class="section-title">
-                    Sobre a Empresa
-                </h2>
-
-                <p class="mt-5 text-gray-600 max-w-3xl mx-auto leading-relaxed text-center">
-    A Garagem do Automóvel nasceu da paixão de Lucas por carros e pela vontade de oferecer um atendimento honesto, transparente e de confiança. Desde muito jovem, Lucas já dedicava seu tempo aprendendo sobre mecânica automotiva, sempre buscando entender cada detalhe dos veículos e ajudar amigos e clientes a manterem seus automóveis em perfeito funcionamento.
-    
-    <br><br>
-
-    Com muito esforço e dedicação, surgiu a Garagem do Automóvel: uma oficina criada para unir tecnologia, qualidade e atendimento personalizado. Ao longo dos anos, a empresa conquistou a confiança de diversos clientes graças ao compromisso com serviços bem executados, diagnóstico preciso e respeito com cada pessoa que entra na oficina.
-    
-    <br><br>
-
-    Hoje, a Garagem do Automóvel se destaca pelo atendimento diferenciado e pela busca constante por inovação no setor automotivo. Mais do que consertar veículos, Lucas e sua equipe trabalham para garantir segurança, tranquilidade e satisfação em cada serviço realizado.
-</p>
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="section-title">Sobre a Empresa</h2>
+                <div class="mt-5 text-gray-600 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base text-justify sm:text-center space-y-4">
+                    <p>A Garagem do Automóvel nasceu da paixão de Lucas por carros e pela vontade de oferecer um atendimento honesto, transparente e de confiança. Desde muito jovem, Lucas já dedicava seu tempo aprendendo sobre mecânica automotiva, sempre buscando entender cada detalhe dos veículos e ajudar amigos e clientes a manterem seus automóveis em perfeito funcionamento.</p>
+                    <p>Com muito esforço e dedicação, surgiu a Garagem do Automóvel: uma oficina criada para unir tecnologia, qualidade e atendimento personalizado. Ao longo dos anos, a empresa conquistou a confiança de diversos clientes graças ao compromisso com serviços bem executados, diagnóstico preciso e respeito com cada pessoa que entra na oficina.</p>
+                    <p>Hoje, a Garagem do Automóvel se destaca pelo atendimento diferenciado e pela busca constante por inovação no setor automotivo. Mais do que consertar veículos, Lucas e sua equipe trabalham para garantir segurança, tranquilidade e satisfação em cada serviço realizado.</p>
+                </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-
-                <div class="card-premium p-10"
-                     data-aos="fade-up">
-
-                    <i class="fa-solid fa-gears text-5xl gold-text"></i>
-
-                    <h3 class="text-2xl font-bold mt-6">
-                        Tecnologia Avançada
-                    </h3>
-
-                    <p class="text-gray-600 mt-4 leading-relaxed">
-                        Equipamentos modernos e diagnósticos precisos para garantir
-                        eficiência e segurança ao seu veículo.
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:grid-cols-1">
+                <div class="card-premium p-6 sm:p-10" data-aos="fade-up">
+                    <i class="fa-solid fa-gears text-4xl sm:text-5xl gold-text"></i>
+                    <h3 class="text-xl sm:text-2xl font-bold mt-4 sm:mt-6">Tecnologia Avançada</h3>
+                    <p class="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed">
+                        Equipamentos modernos e diagnósticos precisos para garantir eficiência e segurança ao seu veículo.
                     </p>
-
                 </div>
 
-                <div class="card-premium p-10"
-                     data-aos="fade-up"
-                     data-aos-delay="150">
-
-                    <i class="fa-solid fa-award text-5xl gold-text"></i>
-
-                    <h3 class="text-2xl font-bold mt-6">
-                        Padrão Premium
-                    </h3>
-
-                    <p class="text-gray-600 mt-4 leading-relaxed">
-                        Atendimento sofisticado, organização impecável e serviços
-                        executados com excelência.
+                <div class="card-premium p-6 sm:p-10" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fa-solid fa-award text-4xl sm:text-5xl gold-text"></i>
+                    <h3 class="text-xl sm:text-2xl font-bold mt-4 sm:mt-6">Padrão Premium</h3>
+                    <p class="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed">
+                        Atendimento sofisticado, organização impecável e serviços executados com excelência.
                     </p>
-
                 </div>
 
-                <div class="card-premium p-10"
-                     data-aos="fade-up"
-                     data-aos-delay="300">
-
-                    <i class="fa-solid fa-car-side text-5xl gold-text"></i>
-
-                    <h3 class="text-2xl font-bold mt-6">
-                        Especialistas Automotivos
-                    </h3>
-
-                    <p class="text-gray-600 mt-4 leading-relaxed">
-                        Equipe qualificada pronta para cuidar do seu automóvel com
-                        confiança e precisão.
+                <div class="card-premium p-6 sm:p-10 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-car-side text-4xl sm:text-5xl gold-text"></i>
+                    <h3 class="text-xl sm:text-2xl font-bold mt-4 sm:mt-6">Especialistas Automotivos</h3>
+                    <p class="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed">
+                        Equipe qualificada pronta para cuidar do seu automóvel com confiança e precisão.
                     </p>
-
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
     <!-- SERVIÇOS -->
-    <section id="servicos"
-             class="py-24 bg-[#eef2f3]">
+    <section id="servicos" class="py-16 sm:py-24 bg-[#eef2f3]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center mb-16"
-                 data-aos="fade-up">
-
-                <h2 class="section-title">
-                    Serviços Premium
-                </h2>
-
-                <p class="text-gray-600 mt-5">
-                    Soluções completas para seu automóvel.
-                </p>
-
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="section-title">Serviços Premium</h2>
+                <p class="text-gray-600 mt-4 text-sm sm:text-base">Soluções completas para seu automóvel.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="card-premium overflow-hidden"
-                     data-aos="zoom-in">
-
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop"
-                         class="service-img w-full">
-
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold">
-                            Mecânica Geral
-                        </h3>
-
-                        <p class="mt-4 text-gray-600">
-                            Diagnóstico completo e manutenção especializada.
-                        </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="card-premium overflow-hidden" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop" class="service-img w-full">
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-xl sm:text-2xl font-bold">Mecânica Geral</h3>
+                        <p class="mt-3 text-gray-600 text-sm sm:text-base">Diagnóstico completo e manutenção especializada.</p>
                     </div>
-
                 </div>
 
-                <div class="card-premium overflow-hidden"
-                     data-aos="zoom-in"
-                     data-aos-delay="150">
-
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop"
-                         class="service-img w-full">
-
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold">
-                            Suspensão e Freios
-                        </h3>
-
-                        <p class="mt-4 text-gray-600">
-                            Segurança e estabilidade para seu veículo.
-                        </p>
+                <div class="card-premium overflow-hidden" data-aos="zoom-in" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" class="service-img w-full">
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-xl sm:text-2xl font-bold">Suspensão e Freios</h3>
+                        <p class="mt-3 text-gray-600 text-sm sm:text-base">Segurança e estabilidade para seu veículo.</p>
                     </div>
-
                 </div>
 
-                <div class="card-premium overflow-hidden"
-                     data-aos="zoom-in"
-                     data-aos-delay="300">
-
-                    <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=1200&auto=format&fit=crop"
-                         class="service-img w-full">
-
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold">
-                            Diagnóstico Eletrônico
-                        </h3>
-
-                        <p class="mt-4 text-gray-600">
-                            Tecnologia avançada para máxima precisão.
-                        </p>
+                <div class="card-premium overflow-hidden" data-aos="zoom-in" data-aos-delay="300" class="sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=1200&auto=format&fit=crop" class="service-img w-full">
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-xl sm:text-2xl font-bold">Diagnóstico Eletrônico</h3>
+                        <p class="mt-3 text-gray-600 text-sm sm:text-base">Tecnologia avançada para máxima precisão.</p>
                     </div>
-
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
     <!-- GALERIA -->
-    <section id="galeria"
-             class="py-24">
+    <section id="galeria" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center mb-16">
-
-                <h2 class="section-title"
-                    data-aos="fade-up">
-                    Nossa Estrutura
-                </h2>
-
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="section-title" data-aos="fade-up">Nossa Estrutura</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="gallery-item"
-                     data-aos="fade-up">
-                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1200&auto=format&fit=crop"
-                         class="w-full h-[300px] object-cover transition duration-500 rounded-[24px]">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1200&auto=format&fit=crop" class="w-full h-[240px] sm:h-[300px] object-cover transition duration-500 rounded-[24px]">
                 </div>
-
-                <div class="gallery-item"
-                     data-aos="fade-up"
-                     data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop"
-                         class="w-full h-[300px] object-cover transition duration-500 rounded-[24px]">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" class="w-full h-[240px] sm:h-[300px] object-cover transition duration-500 rounded-[24px]">
                 </div>
-
-                <div class="gallery-item"
-                     data-aos="fade-up"
-                     data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200&auto=format&fit=crop"
-                         class="w-full h-[300px] object-cover transition duration-500 rounded-[24px]">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200&auto=format&fit=crop" class="w-full h-[240px] sm:h-[300px] object-cover transition duration-500 rounded-[24px]">
                 </div>
-
-                <div class="gallery-item"
-                     data-aos="fade-up">
-                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop"
-                         class="w-full h-[300px] object-cover transition duration-500 rounded-[24px]">
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop" class="w-full h-[240px] sm:h-[300px] object-cover transition duration-500 rounded-[24px]">
                 </div>
-
-                <div class="gallery-item"
-                     data-aos="fade-up"
-                     data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop"
-                         class="w-full h-[300px] object-cover transition duration-500 rounded-[24px]">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop" class="w-full h-[240px] sm:h-[300px] object-cover transition duration-500 rounded-[24px]">
                 </div>
-
-                <div class="gallery-item"
-                     data-aos="fade-up"
-                     data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop"
-                         class="w-full h-[300px] object-cover transition duration-500 rounded-[24px]">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" class="w-full h-[240px] sm:h-[300px] object-cover transition duration-500 rounded-[24px]">
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
     <!-- DIFERENCIAIS -->
-    <section class="py-24 bg-[#0b1114] text-white">
+    <section class="py-16 sm:py-24 bg-[#0b1114] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center mb-16"
-                 data-aos="fade-up">
-
-                <h2 class="text-5xl font-extrabold">
-                    Diferenciais Premium
-                </h2>
-
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-5xl font-extrabold">Diferenciais Premium</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-
-                <div class="glass p-8 rounded-[25px] text-center">
-                    <i class="fa-solid fa-clock text-4xl gold-text"></i>
-                    <h3 class="mt-5 font-bold">
-                        Atendimento Ágil
-                    </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+                <div class="glass p-6 sm:p-8 rounded-[25px] text-center">
+                    <i class="fa-solid fa-clock text-3xl sm:text-4xl gold-text"></i>
+                    <h3 class="mt-4 sm:mt-5 font-bold text-sm sm:text-base">Atendimento Ágil</h3>
                 </div>
-
-                <div class="glass p-8 rounded-[25px] text-center">
-                    <i class="fa-solid fa-shield-halved text-4xl gold-text"></i>
-                    <h3 class="mt-5 font-bold">
-                        Garantia de Qualidade
-                    </h3>
+                <div class="glass p-6 sm:p-8 rounded-[25px] text-center">
+                    <i class="fa-solid fa-shield-halved text-3xl sm:text-4xl gold-text"></i>
+                    <h3 class="mt-4 sm:mt-5 font-bold text-sm sm:text-base">Garantia de Qualidade</h3>
                 </div>
-
-                <div class="glass p-8 rounded-[25px] text-center">
-                    <i class="fa-solid fa-screwdriver-wrench text-4xl gold-text"></i>
-                    <h3 class="mt-5 font-bold">
-                        Equipe Especializada
-                    </h3>
+                <div class="glass p-6 sm:p-8 rounded-[25px] text-center">
+                    <i class="fa-solid fa-screwdriver-wrench text-3xl sm:text-4xl gold-text"></i>
+                    <h3 class="mt-4 sm:mt-5 font-bold text-sm sm:text-base">Equipe Especializada</h3>
                 </div>
-
-                <div class="glass p-8 rounded-[25px] text-center">
-                    <i class="fa-solid fa-car text-4xl gold-text"></i>
-                    <h3 class="mt-5 font-bold">
-                        Tecnologia Automotiva
-                    </h3>
+                <div class="glass p-6 sm:p-8 rounded-[25px] text-center">
+                    <i class="fa-solid fa-car text-3xl sm:text-4xl gold-text"></i>
+                    <h3 class="mt-4 sm:mt-5 font-bold text-sm sm:text-base">Tecnologia Automotiva</h3>
                 </div>
-
-                <div class="glass p-8 rounded-[25px] text-center">
-                    <i class="fa-solid fa-headset text-4xl gold-text"></i>
-                    <h3 class="mt-5 font-bold">
-                        Suporte Premium
-                    </h3>
+                <div class="glass p-6 sm:p-8 rounded-[25px] text-center sm:col-span-2 lg:col-span-1">
+                    <i class="fa-solid fa-headset text-3xl sm:text-4xl gold-text"></i>
+                    <h3 class="mt-4 sm:mt-5 font-bold text-sm sm:text-base">Suporte Premium</h3>
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
     <!-- DEPOIMENTOS -->
-    <section class="py-24">
+    <section class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-        <div class="max-w-6xl mx-auto px-6">
-
-            <div class="text-center mb-16">
-
-                <h2 class="section-title">
-                    Clientes Satisfeitos
-                </h2>
-
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="section-title">Clientes Satisfeitos</h2>
             </div>
 
             <div class="swiper mySwiper">
-
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-
-                        <div class="card-premium p-10 text-center">
-
-                            <p class="text-gray-600 italic leading-relaxed">
-                                “Atendimento impecável e serviço extremamente profissional.
-                                Oficina diferenciada.”
+                    <div class="swiper-slide p-2">
+                        <div class="card-premium p-6 sm:p-10 text-center h-full flex flex-col justify-between">
+                            <p class="text-gray-600 italic leading-relaxed text-sm sm:text-base">
+                                “Atendimento impecável e serviço extremamente profissional. Oficina diferenciada.”
                             </p>
-
-                            <h4 class="mt-6 font-bold text-xl">
-                                Carlos Henrique
-                            </h4>
-
+                            <h4 class="mt-6 font-bold text-lg sm:text-xl text-blue-900">Carlos Henrique</h4>
                         </div>
-
                     </div>
 
-                    <div class="swiper-slide">
-
-                        <div class="card-premium p-10 text-center">
-
-                            <p class="text-gray-600 italic leading-relaxed">
-                                “Ambiente premium e equipe altamente capacitada.
-                                Recomendo muito.”
+                    <div class="swiper-slide p-2">
+                        <div class="card-premium p-6 sm:p-10 text-center h-full flex flex-col justify-between">
+                            <p class="text-gray-600 italic leading-relaxed text-sm sm:text-base">
+                                “Ambiente premium e equipe altamente capacitada. Recomendo muito.”
                             </p>
-
-                            <h4 class="mt-6 font-bold text-xl">
-                                Fernanda Alves
-                            </h4>
-
+                            <h4 class="mt-6 font-bold text-lg sm:text-xl text-blue-900">Fernanda Alves</h4>
                         </div>
-
                     </div>
 
-                    <div class="swiper-slide">
-
-                        <div class="card-premium p-10 text-center">
-
-                            <p class="text-gray-600 italic leading-relaxed">
+                    <div class="swiper-slide p-2">
+                        <div class="card-premium p-6 sm:p-10 text-center h-full flex flex-col justify-between">
+                            <p class="text-gray-600 italic leading-relaxed text-sm sm:text-base">
                                 “Melhor oficina da região. Transparência e qualidade.”
                             </p>
-
-                            <h4 class="mt-6 font-bold text-xl">
-                                Rafael Martins
-                            </h4>
-
+                            <h4 class="mt-6 font-bold text-lg sm:text-xl text-blue-900">Rafael Martins</h4>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="swiper-pagination"></div>
-
             </div>
 
         </div>
-
     </section>
 
     <!-- CTA -->
-    <section class="py-24 bg-gradient-to-r from-[#082d36] to-[#0f4c5c] text-white relative overflow-hidden">
-
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-
-            <h2 class="text-5xl font-extrabold leading-tight"
-                data-aos="fade-up">
-
-                Seu veículo merece
-                um atendimento premium.
+    <section class="py-16 sm:py-24 bg-gradient-to-r from-[#082d36] to-[#0f4c5c] text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight" data-aos="fade-up">
+                Seu veículo merece um atendimento premium.
             </h2>
 
-            <p class="mt-6 text-xl text-gray-300"
-               data-aos="fade-up"
-               data-aos-delay="150">
-
+            <p class="mt-4 sm:mt-6 text-base sm:text-xl text-gray-300" data-aos="fade-up" data-aos-delay="150">
                 Fale agora com nossa equipe especializada.
             </p>
 
-            <a href="https://wa.me/553191463811"
-               target="_blank"
-               class="premium-btn inline-flex items-center gap-4 px-10 py-5 rounded-full mt-10 text-lg"
+            <a href="https://wa.me/553191463811" target="_blank"
+               class="premium-btn inline-flex items-center justify-center gap-4 px-8 sm:px-10 py-4 sm:py-5 rounded-full mt-8 sm:mt-10 text-base sm:text-lg w-full sm:w-auto"
                data-aos="zoom-in">
-
                 <i class="fab fa-whatsapp text-2xl"></i>
                 Solicitar Atendimento
-
             </a>
-
         </div>
-
     </section>
 
     <!-- CONTATO -->
-    <section id="contato"
-             class="py-24">
+    <section id="contato" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="grid lg:grid-cols-2 gap-14 items-center">
-
+            <div class="grid lg:grid-cols-2 gap-10 sm:gap-14 items-center">
                 <div data-aos="fade-right">
-
-                    <h2 class="section-title">
-                        Entre em Contato
-                    </h2>
-
-                    <p class="mt-6 text-gray-600 leading-relaxed">
-                        Atendimento especializado para cuidar do seu automóvel com
-                        máxima qualidade e confiança.
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p class="mt-4 text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Atendimento especializado para cuidar do seu automóvel com máxima qualidade e confiança.
                     </p>
 
-                    <div class="mt-10 space-y-6">
-
-                        <a href="https://wa.me/553191463811"
-                           target="_"
-                           class="flex items-center gap-5 card-premium p-6">
-
-                            <i class="fab fa-whatsapp text-4xl gold-text"></i>
-
+                    <div class="mt-8 sm:mt-10 space-y-4 sm:space-y-6">
+                        <a href="https://wa.me/553191463811" target="_blank" class="flex items-center gap-4 sm:gap-5 card-premium p-4 sm:p-6">
+                            <i class="fab fa-whatsapp text-3xl sm:text-4xl gold-text"></i>
                             <div>
-                                <h4 class="font-bold text-xl">
-                                    WhatsApp
-                                </h4>
-                                <p class="text-gray-600">
-                                    Fale com nossa equipe
-                                </p>
+                                <h4 class="font-bold text-lg sm:text-xl">WhatsApp</h4>
+                                <p class="text-gray-600 text-sm">Fale com nossa equipe</p>
                             </div>
-
                         </a>
 
-                        <a href="https://instagran.comedbrindes_loja/"
-                           target="_blank"
-                           class="flex items-center gap-5 card-premium p-6">
-
-                            <i class="fab fa-instagram text-4xl gold-text"></i>
-
+                        <a href="https://instagran.comedbrindes_loja/" target="_blank" class="flex items-center gap-4 sm:gap-5 card-premium p-4 sm:p-6">
+                            <i class="fab fa-instagram text-3xl sm:text-4xl gold-text"></i>
                             <div>
-                                <h4 class="font-bold text-xl">
-                                    Instagram
-                                </h4>
-                                <p class="text-gray-600">
-                                    Acompanhe nossas novidades
-                                </p>
+                                <h4 class="font-bold text-lg sm:text-xl">Instagram</h4>
+                                <p class="text-gray-600 text-sm">Acompanhe nossas novidades</p>
                             </div>
-
                         </a>
-
                     </div>
-
                 </div>
 
-                <div data-aos="fade-left">
-
+                <div data-aos="fade-left" class="w-full">
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1715724780199!6m8!1m7!1saXrpIjMnj0sSns7HNpYIlg!2m2!1d-20.0060767!2d-44.01149!3f333.28!4f-16.05!5f0.7820865974627469"
-                            width="100%"
-                            height="450"
-                            style="border:0; border-radius:30px;"
-                            allowfullscreen=""
-                            loading="lazy">
+                            width="100%" height="350" class="sm:h-[450px]" style="border:0; border-radius:30px;" allowfullscreen="" loading="lazy">
                     </iframe>
-
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
     <!-- FOOTER -->
-    <footer class="pt-20 pb-10 text-white">
+    <footer class="pt-16 pb-8 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="grid lg:grid-cols-3 gap-12">
-
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12">
                 <div>
-
-                    <img src="images/garagemlogo.jpg"
-                         class="w-40">
-
-                    <p class="text-gray-400 mt-6 leading-relaxed">
-                        Oficina mecânica premium especializada em tecnologia,
-                        performance e excelência automotiva.
+                    <img src="images/garagemlogo.jpg" class="w-32 sm:w-40 rounded-full">
+                    <p class="text-gray-400 mt-6 text-sm sm:text-base leading-relaxed">
+                        Oficina mecânica premium especializada em tecnologia, performance e excelência automotiva.
                     </p>
-
                 </div>
 
                 <div>
-
-                    <h3 class="text-2xl font-bold mb-6">
-                        Links
-                    </h3>
-
-                    <div class="space-y-4 text-gray-400">
-
-                        <a href="#home"
-                           class="block hover:text-white transition">
-                            Início
-                        </a>
-
-                        <a href="#sobre"
-                           class="block hover:text-white transition">
-                            Sobre
-                        </a>
-
-                        <a href="#servicos"
-                           class="block hover:text-white transition">
-                            Serviços
-                        </a>
-
-                        <a href="#contato"
-                           class="block hover:text-white transition">
-                            Contato
-                        </a>
-
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Links</h3>
+                    <div class="space-y-3 text-gray-400 text-sm sm:text-base">
+                        <a href="#home" class="block hover:text-white transition">Início</a>
+                        <a href="#sobre" class="block hover:text-white transition">Sobre</a>
+                        <a href="#servicos" class="block hover:text-white transition">Serviços</a>
+                        <a href="#contato" class="block hover:text-white transition">Contato</a>
                     </div>
-
                 </div>
 
                 <div>
-
-                    <h3 class="text-2xl font-bold mb-6">
-                        Redes Sociais
-                    </h3>
-
-                    <div class="flex gap-5">
-
-                        <a href="https://wa.me/553191463811"
-                           target="_blank"
-                           class="w-14 h-14 rounded-full glass flex items-center justify-center hover:scale-110 transition">
-
-                            <i class="fab fa-whatsapp text-xl"></i>
-
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Redes Sociais</h3>
+                    <div class="flex gap-4 sm:gap-5">
+                        <a href="https://wa.me/553191463811" target="_blank"
+                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full glass flex items-center justify-center hover:scale-110 transition">
+                            <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
                         </a>
-
-                        <a href="https://instagran.comedbrindes_loja/"
-                           target="_blank"
-                           class="w-14 h-14 rounded-full glass flex items-center justify-center hover:scale-110 transition">
-
-                            <i class="fab fa-instagram text-xl"></i>
-
+                        <a href="https://instagran.comedbrindes_loja/" target="_blank"
+                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full glass flex items-center justify-center hover:scale-110 transition">
+                            <i class="fab fa-instagram text-lg sm:text-xl"></i>
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
 
-            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500">
-
-                © 2026 GARAGEM DO AUTOMÓVEL — Todos os direitos reservados.
-                <footer style="text-align:center; padding:25px 0; border-top:1px solid #222; margin-top:40px;">
-    <p style="color:#888; font-size:14px; letter-spacing:1px;">
-        Site desenvolvido por 
-        <a href="https://devduo.tec.br/" 
-           target="_blank"
-           style="color:#2563eb; font-weight:700; text-decoration:none;">
-            DevDuo Tecnologia
-        </a>
-    </p>
-</footer>
-
+            <div class="border-t border-gray-800 mt-12 sm:mt-16 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-500">
+                <p class="mb-4">© 2026 GARAGEM DO AUTOMÓVEL — Todos os direitos reservados.</p>
+                <p class="text-gray-400 tracking-wider">
+                    Site desenvolvido por 
+                    <a href="https://devduo.tec.br/" target="_blank" class="text-blue-500 font-bold hover:underline">
+                        DevDuo Tecnologia
+                    </a>
+                </p>
             </div>
 
         </div>
-
     </footer>
 
     <!-- GSAP -->
@@ -946,6 +676,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
+        // Menu Mobile Trigger
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-xmark');
+            document.body.classList.toggle('overflow-y-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
         // AOS
         AOS.init({
@@ -953,28 +698,34 @@
             once: true
         });
 
-        // Swiper
+        // Swiper Adaptado Responsivo
         const swiper = new Swiper(".mySwiper", {
             loop: true,
-            spaceBetween: 30,
+            spaceBetween: 20,
             autoplay: {
                 delay: 3500,
+                disableOnInteraction: false,
             },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            breakpoints: {
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
         });
 
         // GSAP Hero
         gsap.from(".hero h1", {
-            y: 60,
+            y: 40,
             opacity: 0,
             duration: 1.2
         });
 
         gsap.from(".hero p", {
-            y: 40,
+            y: 30,
             opacity: 0,
             duration: 1.4,
             delay: .3
@@ -986,9 +737,7 @@
             duration: 1,
             delay: .6
         });
-
     </script>
 
 </body>
-
 </html>
